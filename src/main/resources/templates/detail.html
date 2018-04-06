@@ -53,9 +53,9 @@
                     <div class="new-comment">
                         <form th:action="@{|~/detail/${entry.slug}|}" method="post">
                               <label for="name"> Name</label>
-                              <input type="text" name="name"><br>
+                              <input id="name" type="text" name="name"><br>
                               <label for="comment">Comment</label>
-                              <textarea rows="5" name="comment"></textarea>
+                              <textarea id="comment" rows="5" name="comment"></textarea>
                               <input type="submit" value="Post Comment" class="button">
                         </form>
                     </div>

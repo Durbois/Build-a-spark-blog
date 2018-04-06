@@ -100,6 +100,14 @@ public class Main {
             }else{
                 blogEntry = new BlogEntry(title, new Date(), entry);
 
+                int tagsNumber = req.queryParamsValues("tags").length;
+
+                if(tagsNumber != 0){
+                    for(String tag: req.queryParamsValues("tags")) {
+                        blogEntry.addTag(tag);
+                    }
+                }
+
                 BlogEntry existedBlogEntry = blogDao.findEntryBySlug(blogEntry.getSlug());
 
                 if(existedBlogEntry != null){

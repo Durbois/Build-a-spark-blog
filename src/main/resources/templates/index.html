@@ -25,6 +25,9 @@
                     <article th:each="entry : ${entries}">
                         <h2><a th:href="@{|~/detail/${entry.slug}|}" th:text="${entry.title}">Entry</a></h2>
                         <time th:text="${#dates.format(entry.date,'MMMM dd, yyyy, HH:mm')}"></time>
+                        <div th:if="${#lists.size(entry.tags) != 0}" th:each="tag : ${entry.tags}">
+                            <span th:text="|#${tag}|"></span>
+                        </div>
                     </article>
 
                     <!--<article>
